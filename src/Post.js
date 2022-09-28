@@ -1,16 +1,26 @@
-import React from "react"
+import React from "react";
+import PropTypes from 'prop-types';
 
 
 // Props -> Propriedades 
 export default function Post(props) {
-    console.log(props);
     return (
     <React.Fragment>
         <article>
-            <strong>Título da notícia</strong><br />
-            <small>Subtítulo da notícia</small>
+            <strong>{props.post.title}</strong><br />
+            <small>{props.post.subtitle}</small>
+            <br />
+            Likes: {props.likes / 2}
         </article>
         <br />
     </React.Fragment>
     )
+}
+
+Post.propTypes = {
+    likes: PropTypes.number.isRequired,
+    post: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string.isRequired,
+    }).isRequired,
 }
