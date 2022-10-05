@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import Post from './Post'
 import Header from "./Header";
 
+import { ThemeProvider } from './ThemeContext'
+
 // Render --> Renderizar
 function App() {
+
   const [posts, setPosts] = useState([
     { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 20, read: false },
     { id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10, read: true },
@@ -32,7 +35,7 @@ function App() {
 
 
     return (
-      <React.Fragment>
+      <ThemeProvider>
 
         <Header>
           <h2>
@@ -51,7 +54,7 @@ function App() {
           />
         ))}
 
-      </React.Fragment>
+      </ThemeProvider>
     );
 }
 
