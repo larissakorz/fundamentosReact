@@ -4,7 +4,7 @@ import Post from '../Post'
 import Header from "../Header";
 import { ThemeProvider } from '../../context/ThemeContext'
 
-import styles from './App.scss';
+import {Title} from './style';
 
 // Render --> Renderizar
 function App() {
@@ -43,10 +43,10 @@ function App() {
     <ThemeProvider>
 
       <Header>
-        <h2 className={styles.title}>
+        <Title as='h2'>
           Post da semana
-        <button onClick={handleRefresh}>Atualizar</button>
-          </h2>
+          <button onClick={handleRefresh}>Atualizar</button>
+        </Title>
       </Header>
 
         <hr />
